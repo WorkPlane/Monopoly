@@ -15,17 +15,28 @@
 
 2. **Настройка базы данных:**
 
-    Убедитесь, что у вас настроена база данных, например, MySQL или H2, и добавлены соответствующие настройки в файл `application.properties`. Пример для использования H2:
+    Убедитесь, что у вас настроена база данных PostgreSQL и создана база данных для проекта. Используйте следующие настройки для подключения к PostgreSQL:
+
+    - Создайте новую базу данных, например, `monopoly_game`.
+
+    - В настройках приложения укажите параметры подключения к PostgreSQL в файле `application.properties`:
 
     ```properties
-    spring.datasource.url=jdbc:h2:mem:testdb
-    spring.datasource.driverClassName=org.h2.Driver
-    spring.datasource.username=sa
-    spring.datasource.password=password
-    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-    spring.h2.console.enabled=true
+    spring.datasource.url=jdbc:postgresql://localhost:5432/monopoly_game
+    spring.datasource.driverClassName=org.postgresql.Driver
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+    spring.jpa.show-sql=true
+    spring.datasource.initialization-mode=always
     ```
 
+    **Параметры подключения:**
+    - `spring.datasource.url` — URL подключения к базе данных (замените `localhost` и `5432` на адрес и порт вашей базы данных).
+    - `spring.datasource.username` и `spring.datasource.password` — данные для аутентификации в PostgreSQL.
+    - `spring.jpa.hibernate.ddl-auto` — автоматическое обновление схемы базы данных (значение `update` означает, что Hibernate будет обновлять структуру базы данных в соответствии с изменениями в моделях).
+      
 3. **Запуск приложения:**
 
     Для запуска приложения можно использовать команду:
