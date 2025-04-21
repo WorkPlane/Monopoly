@@ -1,0 +1,8 @@
+com\example\monopoly\model\Property.class
+com\example\monopoly\repository\GameStateRepository.class
+com\example\monopoly\service\GameService.class
+com\example\monopoly\model\Player.class
+com\example\monopoly\MonopolyApplication.class
+com\example\monopoly\model\GameState.class
+com\example\monopoly\repository\PlayerRepository.class
+com\example\monopoly\controller\AliceController.class
