@@ -10,7 +10,6 @@
 
     ```bash
     git clone https://github.com/WorkPlane/Monopoly.git
-    cd monopoly-voice-game
     ```
 
 2. **Настройка базы данных:**
